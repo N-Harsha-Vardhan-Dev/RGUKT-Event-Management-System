@@ -118,8 +118,8 @@ span{
       <div class="container">
           <h1 class="h1">Event Registration Page</h1>
           <ul>
-              <li><a href="http://localhost:9999" active>Home</a></li>
-              <li><a href="http://localhost:9999/event" active>Back</a></li>
+              <li><a href="https://hgpt.onrender.com" active>Home</a></li>
+              <li><a href="https://hgpt.onrender.com/event" active>Back</a></li>
           </ul>
       </div>
   </nav>
@@ -226,18 +226,18 @@ span{
                 .then(data => {                   
                     if(data.message === 'success'){
                         alert("Please Check Your email");
-                        window.location.href = `http://localhost:9999/event?${queryParam}`;
+                        window.location.href = `https://hgpt.onrender.com/event?${queryParam}`;
                     }
                     else{
                         alert(data.message);
-                        window.location.href = `http://localhost:9999/event?${queryParam}`;
+                        window.location.href = `https://hgpt.onrender.com/event?${queryParam}`;
                     }
                 })
                 .catch(error => console.error("Error : ", error));
             }
             else {
                 alert("You are already registerd for this event ", data.message);
-                window.location.href = `http://localhost:9999/event?${queryParam}`;
+                window.location.href = `https://hgpt.onrender.com/event?${queryParam}`;
             }
         })
         .catch(error=> console.error("Error : ", error));

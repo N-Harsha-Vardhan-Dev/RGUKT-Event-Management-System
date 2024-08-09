@@ -290,18 +290,18 @@
 
         <ul class="sidebar-list">
           <li class="sidebar-list-item">
-            <a href="http://localhost:9999/" target="_self">
+            <a href="https://hgpt.onrender.com/" target="_self">
               <i class="fa-solid fa-house icons"></i>Home
             </a>
           </li>
           <li class="sidebar-list-item ">
-            <a href="http://localhost:9999/event" target="_self">
+            <a href="https://hgpt.onrender.com/event" target="_self">
               <i class="fa-solid fa-user-group icons"></i>
               Student
             </a>
           </li>
           <li class="sidebar-list-item">
-            <a href="http://localhost:9999/admin" target="_self">
+            <a href="https://hgpt.onrender.com/admin" target="_self">
               <i class="fa-solid fa-user-tie icons"></i>
                Admin
             </a>
@@ -419,7 +419,7 @@ function closeSidebar() {
         let registrations = document.getElementById('registrations').value ;
         let students = document.getElementById('students').value ;
         let organizers = document.getElementById('organizers').value ;
-        fetch('http://localhost:9999/details', {
+        fetch('https://hgpt.onrender.com/details', {
           method: 'POST',
           headers: {
               'Content-Type': 'application/json'
@@ -446,7 +446,7 @@ function closeSidebar() {
     <!-- Bar Chart-->
     <script>
       window.addEventListener('load', function(event){
-        fetch('http://localhost:9999/bar-chart/')
+        fetch('https://hgpt.onrender.com/bar-chart/')
         .then(response=>response.json())
         .then(data=>{
           var cultural = data.culturals['count(*)'] ;
@@ -570,7 +570,7 @@ barChart.render();
     <!-- Area Chart-->
     <script>
       window.addEventListener("load", function(){
-        fetch('http://localhost:9999/area-chart/')
+        fetch('https://hgpt.onrender.com/area-chart/')
         .then(response=>response.json())
         .then(data =>{
           if(data.one === undefined){

@@ -225,7 +225,7 @@
                     </form>
                 </div>
                 <div class="button-container1">
-                <a href="http://localhost:9999/analytics/"><button style="--clr:#FF5E00" ><span>BACK</span><i></i></button></a>   
+                <a href="https://hgpt.onrender.com/analytics/"><button style="--clr:#FF5E00" ><span>BACK</span><i></i></button></a>   
                 </div>
             </div>
         </div>
@@ -259,7 +259,7 @@
               event.preventDefault();
               const email = document.getElementById('email').value;
               const password = document.getElementById('password').value;
-              fetch('http://localhost:9999/admin-access/', {
+              fetch('https://hgpt.onrender.com/admin-access/', {
                 method: 'POST',
                 headers: {
                   'Content-Type': 'application/json'
@@ -290,7 +290,7 @@
               event.preventDefault();
               const organizerEmail = document.getElementById('organizerEmail').value;
               //alert("Fetching");
-              fetch('http://localhost:9999/orgainzerAdd/', {
+              fetch('https://hgpt.onrender.com/orgainzerAdd/', {
                 method: 'POST',
                 headers: {
                   'Content-Type': 'application/json'
@@ -318,7 +318,7 @@
               event.preventDefault();
               const organizerEmail = document.getElementById('organizerEmail').value;
               //alert("Fetching");
-              fetch('http://localhost:9999/orgainzerRemove/', {
+              fetch('https://hgpt.onrender.com/orgainzerRemove/', {
                 method: 'POST',
                 headers: {
                   'Content-Type': 'application/json'

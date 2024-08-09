@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/df68bedbe1.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="explore_1.css">
+    <link rel="stylesheet" href="events.css">
+    
+    
+</head>
+<style>
+    .image-1 {
+    width: 100px; /* Adjust size as needed */
+    height: 100px; /* Adjust size as needed */
+    border-radius: 50%; /* Ensures the element is circular */
+   /* Example background color */
+   background-color: #ffffff;
+    text-align: center; /* Centers any text content inside */
+    line-height: 100px; /* Centers vertically */
+    color:deepskyblue; /* Text color */
+    font-size: 50px; /* Adjust font size as needed */
+}
+     .image {
+    width: 50px; /* Adjust size as needed */
+    height: 50px; /* Adjust size as needed */
+    border-radius: 50%; /* Ensures the element is circular */
+   /* Example background color */
+   background-color: #ffffff;
+    text-align: center; /* Centers any text content inside */
+    line-height: 50px; /* Centers vertically */
+    color: #ffffff; /* Text color */
+    font-size: 20px; /* Adjust font size as needed */
+}
+
+.main-head{
+    font-weight: bold;
+    color:white;
+    font-family:"Roboto";
+}
+.login{
+    font-size:18px;
+    font-weight:300;
+    font-family:"Roboto";
+}
+.navbar-2{
+    height:50px;
+}
+#navItem1 {
+    color: #ffffff;
+    font-family: "Roboto";
+    font-weight: bold;
+}
+
+#navItem2 {
+    color: #ffffff;
+    font-family: "Roboto";
+    font-weight: bold;
+}
+
+#navItem3 {
+    color: #ffffff;
+    font-family: "Roboto";
+    font-weight: bold;
+}
+
+#navItem4 {
+    color: #ffffff;
+    font-family: "Roboto";
+    font-weight: bold;
+}
+.navbar-2 a:hover {
+            background-color: #28a745; /* Bootstrap's bg-success color */
+            color: white; /* Ensure the text is readable */
+            border-radius: 10px; /* Optional: add border radius for rounded corners */
+            text-decoration: none; /* Remove underline */
+           padding:10px;
+        }
+.caption-with-opacity {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative; /* Needed for the z-index to work */
+    filter: brightness(60%) contrast(100%) saturate(80%) hue-rotate(360deg); /* Adjust values for the desired blue filter effect */
+    height:500px;
+}
+.animate {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+        }
+        
+        .fade-in {
+            animation: fadeIn 1s forwards;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .delay-1 {
+            animation-delay: 1s;
+        }
+        
+        .delay-2 {
+            animation-delay: 2s;
+        }
+        
+        .delay-3 {
+            animation-delay: 3s;
+        }
+    .link{
+            background-color: #28a745;
+            border-radius:20px;
+            margin-top:5px;
+            margin-bottom:5px;
+        }
+        .drop{
+            background-color:transparent;
+        }
+        
+.feature-head{
+    color:darkturquoise;
+    font-family:"Roboto";
+    font-size:50px;
+    font-weight:bold;
+}
+
+.custom-card {
+            height:150px;
+            width: 300px; /* Specify your desired width */
+            border-radius: 15px; /* Specify border radius */
+            background-color:deepskyblue; /* Blue background color */
+            color: #ffffff; /* Text color */
+            margin-bottom: 20px; /* Space between cards */
+        }
+.car{
+    border-radius:40px;
+}
+.event-head{
+    color:rgb(16, 17, 17);
+    font-family:"Roboto";
+    font-size:70px;
+    font-weight:bolder;
+}
+
+.footer .btn.btn-social {
+    margin-right: 5px;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--light);
+    font-weight: normal;
+    border: 1px solid #FFFFFF;
+    border-radius: 35px;
+    transition: .3s;
+}
+
+.footer .btn.btn-social:hover {
+    color: var(--primary);
+}
+
+.footer .btn.btn-link {
+    display: block;
+    margin-bottom: 5px;
+    padding: 0;
+    text-align: left;
+    color: #FFFFFF;
+    font-size: 15px;
+    font-weight: normal;
+    text-transform: capitalize;
+    transition: .3s;
+}
+
+.footer .btn.btn-link::before {
+    position: relative;
+    content: "\f105";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    margin-right: 10px;
+}
+
+.footer .btn.btn-link:hover {
+    letter-spacing: 1px;
+    box-shadow: none;
+}
+
+.footer .footer-menu a {
+    margin-right: 15px;
+    padding-right: 15px;
+    border-right: 1px solid rgba(255, 255, 255, .1);
+}
+
+.footer .footer-menu a:last-child {
+    margin-right: 0;
+    padding-right: 0;
+    border-right: none;
+}
+        
+/*
+<!-- This is for Adds or promotion -->
+*/
+        /* The Modal (background) */
+        .modal ,
+        .modal2 {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            padding-top: 0px; /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.5); /* Black w/ opacity */
+        }
+
+        /* Modal Content */
+        .modal-content ,
+        .modal-content2 {
+            background-color: #fefefe ; /* #297b94 */
+            margin: auto;
+            padding: 10px;
+            border: 1px solid #888;
+            width: 30%;
+            left : 30% ;
+        }
+
+        /* The Close Button */
+        .close , 
+        .close2 {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus ,
+        .close2:focus, 
+        .close2:hover {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .modal3 {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.1); /* Black w/ opacity */
+        }
+
+        /* Modal Content/Box */
+        .modal-content3 {
+            background-color: #fefefe;
+            margin: 15% auto; /* 15% from the top and centered */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%; /* Could be more or less, depending on screen size */
+        }
+
+        /* The Close Button */
+        .close3 {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close3:hover,
+        .close3:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .content .title{
+            font-size: 40px;
+            text-transform: uppercase;
+            color: #14ff72cb;
+            font-weight: bold;
+            line-height: 1;
+        
+            opacity: 0;
+            animation: animate 1s ease-in-out 0.3s 1 forwards;
+        }
+        
+        .content .name{
+            font-size: 40px;
+            text-transform: uppercase;
+            font-weight: bold;
+            line-height: 1;
+            text-shadow: 3px 4px 4px rgba(73, 214, 7, 0.8);
+        
+            opacity: 0;
+            animation: animate 1s ease-in-out 0.6s 1 forwards;
+        }
+        
+        .content .des{
+            margin-top: 10px;
+            margin-bottom: 20px;
+            font-size: 18px;
+            margin-left: 5px;
+        
+            opacity: 0;
+            animation: animate 1s ease-in-out 0.9s 1 forwards;
+        }
+        
+        .content .btn{
+            margin-left: 5px;
+        
+            opacity: 0;
+            animation: animate 1s ease-in-out 1.2s 1 forwards;
+        }
+        
+        .content .btn button{
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border: 2px solid #fff;
+        }
+        
+        .content .btn button:nth-child(1){
+            margin-right: 15px;
+        }
+        
+        .content .btn button:nth-child(2){
+            background: transparent;
+            color: #14ff72cb;
+            border: 2px solid #fff;
+            transition: 0.3s;
+        }
+        
+        .content .btn button:nth-child(2):hover{
+            background-color: #14ff72cb;
+            color: #fff;
+            border-color: #14ff72cb;
+        }
+        
+        
+        @keyframes animate {
+            
+            from{
+                opacity: 0;
+                transform: translate(0, 100px);
+                filter: blur(33px);
+            }
+        
+            to{
+                opacity: 1;
+                transform: translate(0);
+                filter: blur(0);
+            }
+        }
+</style>
+
+<body style="background-image: url('https://wallpaperaccess.com/full/2475175.jpg'); background-size:cover; background-attachment: fixed;"  onLoad="noBack();" onpageshow="if (event.perisited) noBack();" onunload="">
+    <div id="home">
+                   <nav class="navbar navbar-expand-lg navbar-light bg-dark shadow">
+                        <a class="navbar-brand" href="#">
+                            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjPYx0PlKcedlNfziAH6-snlGUn-2vgCy6NNiERXJPttcT23dnG_gjCX6NY5kXhjjT0cYDzUM8eUdwYLAMEJz0QhgW4WLbGeTZzvD-pkeoYMdSFJV-s5aCVwrP9Kd2cHbwsfIel3dzUmig/s294/rgukt.png" class="image">
+                            <span class="main-head">RGUKT EVENT MANAGEMENT SYSTEM</span>
+                        </a>
+                    <div class="d-flex flex-row justify-content-center ml-auto">
+                    
+                    
+                        <div class="dropdown m-1">
+                              <a class="btn btn-success dropdown-toggle login" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Login
+                              </a>
+                            
+                              <div class="dropdown-menu drop" aria-labelledby="dropdownMenuLink">
+                                <a class="dropdown-item animate fade-in link" href="http://localhost:9999/login1/">Student</a>
+                                <a class="dropdown-item animate fade-in delay-1 link" href="http://localhost:9999/login2/">Faculty</a>
+                                <a class="dropdown-item animate fade-in delay-2  link" href="http://localhost:9999/login3/">Event Organizer</a>
+                              </div>
+                        </div>
+                
+                
+
+                         <div class="dropdown m-1">
+                              <a class="btn btn-light dropdown-toggle login" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Register
+                              </a>
+                            
+                              <div class="dropdown-menu drop" aria-labelledby="dropdownMenuLink">
+                                <a class="dropdown-item animate fade-in  link" href="http://localhost:9999/registration1/">Student</a>
+                                <a class="dropdown-item fade-in delay-1  link" href="http://localhost:9999/registration2/">Faculty</a>
+                                <a class="dropdown-item fade-in delay-2  link" href="http://localhost:9999/registration3/">Event Organizer</a>
+                              </div>
+                        </div>
+                    </div>
+            
+                      
+             </nav>
+                      <div class="bg-secondary shadow navbar-2 pt-2">
+                         <div class="text-center">
+                            <a class="text-white m-1" href="#home" id="navItem1"><i class="fa-solid fa-house"></i>&nbsp;Home<span class="sr-only">(current)</span></a>
+                            <a class="text-white m-1" href="#features" id="navItem2"><i class="fa-solid fa-bars"></i>&nbsp;Features</a>
+                            <a class="text-white m-1" href="#events" id="navItem3"><i class="fa-solid fa-calendar-days"></i>&nbsp;Events</a>
+                            <a class="text-white m-1" href="#contactus" tabindex="-1" aria-disabled="true" id="navItem4">&nbsp;<i class="fa-solid fa-phone"></i>&nbsp;Contact Us</a>
+                          </div>
+                     </div>  
+                     
+<div id="carouselExampleIndicators" class="carousel slide ml-4 mr-4 mt-4" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="https://shiksha-static-mediadata.s3.ap-southeast-1.amazonaws.com/mediadata/reviewDocument/images/1691140628480images(1).jpeg" class="w-100 caption-with-opacity car" alt="...">
+        <div class="carousel-caption text-center">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-sm-10 col-lg-8">
+                        <div class="content">
+                            
+                            <div class="name" style="margin-bottom:100px;margin-right:80px;">Welcome to event management system</div>
+                            
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </div>    
+    </div>
+    <div class="carousel-item">
+      <img src="https://i.ytimg.com/vi/fKJlJShst1E/sddefault.jpg" class="w-100 caption-with-opacity car" alt="...">
+      <div class="carousel-caption text-center">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-sm-10 col-lg-8">
+                    <div class="content">
+                        
+                        <div class="name" style="margin-bottom:80px;margin-right:80px;">Welcome to event management system</div>
+                        
+                    </div>
+                    
+                    
+                </div>
+            </div>
+        </div>
+    </div>    
+</div>
+    <div class="carousel-item">
+      <img src="https://pbs.twimg.com/media/Dn2vWmaXcAAbyYz?format=jpg&name=large" class="w-100 caption-with-opacity car" alt="...">
+        <div class="carousel-caption text-center">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-sm-10 col-lg-8">
+                        <div class="content">
+                            
+                            <div class="name" style="margin-bottom:80px;margin-right:80px;">Welcome to event management system</div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    
+    </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+</div>
+<div id="features">
+    <h1 class="feature-head text-center mt-3">Features</h1>
+    <div class="features_page m-4">
+        
+        <div class="container">
+            <div class="card" style ="left:15px;">
+                <div class="image" style ="left:15px ;">
+                    <img src="img-7.jpeg" width="300px" height="300px" style="border-radius: 50%;">
+                </div>
+                <div class="content">
+                        <h1 class="one">Advaitha</h1><hr>
+                        <p>
+                            Advaitha CSE department's farewell event, is likely held to honor and bid farewell to the graduating students of the CSE department at RGUKT 
+                        </p>
+                </div>
+            </div>
+        </div>
+         <!--image2-->
+        <div class="container">
+            <div class="card" style ="left:15px;">
+                <div class="image" style ="left:15px;">
+                    <img src="img-6.jpeg" width="300px" height="300px" style="border-radius: 50%;">
+                </div>
+                <div class="content">
+                        <h1 class="two">Anantha</h1><hr>
+                        <p>
+                            Anantha is an annual event organized by the CSE department at RGUKT. It allows students to showcase their talents, skills, and innovations.
+                        </p>
+                </div>
+            </div>
+        </div>
+         <!--image3-->
+        <div class="container mr-5">
+            <div class="card" style ="left:15px;">
+                <div class="image" style ="left:15px;">
+                    <img src="img-8.jpeg" width="300px" height="300px" style="border-radius: 50%;">
+                </div>
+                <div class="content">
+                        <h1 class="three">Aadhya</h1><hr>
+                        <p>
+                            Aadhya is an annual event held by the ECE department at RGUKT. It's a platform that showcases the skills, and innovations of ECE students.
+                        </p>
+                </div>
+            </div>
+        </div>
+    
+    </div>
+</div>
+<div id="events">
+    <h1 class="event-head text-center">Events</h1>
+    <div class="d-flex flex-row justify-content-center">
+        <div class="card-1">
+            <img src="https://img.freepik.com/premium-photo/global-business-structure-networking-analysis_605905-87545.jpg?w=826" class="event-img">
+            <div class="intro">
+                <h1 class="even-head">Technical Events :</h1>
+                <p  class="even-para">
+                    1. Webinars<br>
+                    2. Workshops<br>
+                    3. Hackathon<br>
+                    4. Certification and Badges</p>
+            </div>
+        </div>
+        <div class="card-1">
+            <img src="https://img.freepik.com/premium-photo/virtual-concert-experience-with-fans-from-different-countries_1247965-18276.jpg?w=740" class="event-img">
+            <div class="intro">
+                <h1 class="even-head">Cultural Events:</h1>
+                <p class="even-para">
+                    1. Auction Management <br>
+                    2. Event Ticketing <br>
+                    3. Volunteer Registration<br>
+                    4. Event Galleries</p>
+            </div>
+        </div>
+        <div class="card-1">
+            <img src="https://img.freepik.com/free-photo/soccer-fans-cheering-their-team-stadium_23-2151536119.jpg?t=st=1721836115~exp=1721839715~hmac=27af469823e43533a490f748e4532608d81ee18de2564dd20570271847b22ea7&w=360" class="event-img">
+            <div class="intro">
+                <h1 class="even-head">Sports Events :</h1>
+                <p class="even-para">
+                    1. Team Registration<br>
+                    2. Match Schedules<br>
+                    3. Live Scores and Results<br>
+                    4. Equipment Booking</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="contactus">
+
+    <section id="contact">
+        <div class="container-fluid bg-dark text-light footer mt-3">
+            <div class="container py-5">
+                <div class="row g-5">
+                    <div class="col-lg-4 col-md-6">
+                        <h4 class="text-white mb-3">Quick Links</h4>
+                        <a class="btn btn-link" href="#about">About Us</a>
+                        <a class="btn btn-link" href="mailto:hodcse@rguktrkv.ac.in">Contact Us</a>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <h4 class="text-white mb-3">Contact US</h4>
+                        <p class="mb-2">CSE Dept, RK Valley, IIIT</p>
+                        <p class="mb-2">+91 7075690330</p>
+                        <p class="mb-2">cse@rguktrkv.ac.in</p>
+                        <div class="d-flex pt-2">
+                            <a class="btn btn-outline-light btn-social" style="overflow: hidden;" href="https://www.linkedin.com/in/n-harsha-vardhan-82b51b280/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                            <a class="btn btn-outline-light btn-social" style="overflow: hidden;" href="mailto:rgukteventmanagement2024@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+                            <a class="btn btn-outline-light btn-social" style="overflow: hidden;" href="https://github.com/N-Harsha-Vardhan-Dev" target="_blank"><i class="fa-brands fa-github"></i></a>
+                            <a class="btn btn-outline-light btn-social" style="overflow: hidden;" href="https://www.instagram.com/rgukt_rkv_cse?igsh=ajE2czN6MGhheW1t" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    
+                    
+    
+                    <div class="col-lg-4 col-md-6">
+                        <h4 class="text-white mb-3">FeedBack</h4>
+                        <p>Your Feedback is highly appreciated...</p>
+                        <div class="position-relative mx-auto" style="max-width: 400px;">
+                            <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text" placeholder="Write here...">
+                            <button class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2"><a href="mailto:rgukteventmanagement2024@gmail.com" style="color:white">Mail Us</a></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="copyright">
+                    <div class="row">
+                        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                            &copy; <a class="border-bottom text-light" href="https://www.rguktrkv.ac.in" target="_blank">Cse Dept</a>, All Rights Reserved.
+                            Designed By <a class="border-bottom text-light" href="">Team HGPT</a><br><br>
+                        </div>
+                        <div class="col-md-6 text-center text-md-end">
+                            <div class="footer-menu">
+                                <a class="text-light" href="">Home</a>
+                                <a class="text-light" href="#about">About</a>
+                                <a class="text-light" href="#courses">Courses</a>
+                                <a class="text-light" href="#contact">Contact</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </section>
+
+</div>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+    <span class="close">Skip Ad &times;</span>
+    <video width="100%" controls autoplay loop>
+        <source src="data/add1.mp4" type="video/mp4" autoplay controls>
+        Your browser does not support the video tag.
+    </video>
+    </div>
+
+</div>
+
+
+<script>
+    // Get the modal
+    let modal = document.getElementById("myModal");
+    
+    // Get the <span> element that closes the modal
+    let span = document.getElementsByClassName("close")[0];
+    
+    // Function to show the modal after a delay
+    function showModal() {
+        modal.style.display = "block";
+    }
+    
+    // Set a delay to show the modal (e.g., 3 seconds)
+    setTimeout(showModal, 10000); // 3000 milliseconds = 3 seconds
+    
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+    
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+        modal.style.display = "none";
+        }
+    }
+    
+    let modal2 = document.getElementById("myModal2");
+    
+    let span2 = document.getElementsByClassName("close2")[0];
+    
+    function showModal2() {
+        modal2.style.display = "block";
+    }
+    
+    //setTimeout(showModal2, 10000); // 3000 milliseconds = 3 seconds
+    
+    span2.onclick = function() {
+        modal2.style.display = "none";
+    }
+    
+    window.onclick = function(event) {
+        if (event.target == modal2) {
+        modal2.style.display = "none";
+        }
+    }
+    </script>
+
+
+
+    <script type="text/javascript">
+        window.history.forward();
+        function noBack(){
+            window.history.forward();
+        }
+    </script>
+    <script>
+        window.embeddedChatbotConfig = {
+        chatbotId: "z0s9M-hZ-65-UBSaS9UCg",
+        domain: "www.chatbase.co"
+        }
+    </script>
+    <script
+        src="https://www.chatbase.co/embed.min.js"
+        chatbotId="z0s9M-hZ-65-UBSaS9UCg"
+        domain="www.chatbase.co"
+        defer>
+    </script>
+</body>
+</html>

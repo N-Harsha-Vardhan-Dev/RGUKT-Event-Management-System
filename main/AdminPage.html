@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+        .main1 {
+            display: flex;
+            height: 100vh; /* Full viewport height */
+            position: relative;
+            overflow: hidden;
+        }
+        .leftdiv {
+            background-color: rgba(255, 255, 255, 0.3); /* Semi-transparent white */
+            width: 30%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1;
+            position: relative;
+            padding-bottom: 50px;
+        }
+        .rightdiv {
+            width: 70%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1;
+            position: relative;
+        }
+        .video-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+        .form-container {
+            width: 80%;
+            max-width: 500px; /* Added a max-width */
+            margin: 2rem auto;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(4px);
+            box-shadow: 0 3px 5px #000;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
+            border-left: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .inputbox {
+            height: 60px;
+            width: 94%;
+            background: #fff;
+            color: #333;
+            padding: 0 1rem;
+            margin: 1rem 0;
+            font-size: 1.7rem;
+            outline: none;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+        }
+        .inputbox input {
+            width: 100%;
+            height: 100%;
+            border: none;
+            outline: none;
+            font-size: 1.2rem; /* Adjusted font size */
+            padding: 0 1rem;
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin:20px;
+        }
+
+        .button-container1{
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top:60px;
+        }
+        .image-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transform: scale(1.2);
+        }
+        .image {
+            border-radius: 50%;
+            transform: scale(2);
+        }
+        
+        button {
+            position: relative;
+            background: #444;
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+            border: none;
+            letter-spacing: 0.1rem;
+            font-size: 1rem;
+            padding: 1rem 3rem;
+            transition: 0.2s;
+        }
+
+        button:hover {
+            letter-spacing: 0.2rem;
+            padding: 1.1rem 3.1rem;
+            background: var(--clr);
+            color: var(--clr);
+            animation: box 3s infinite;
+        }
+
+        button::before {
+            content: "";
+            position: absolute;
+            inset: 2px;
+            background: #272822;
+        }
+
+        button span {
+            position: relative;
+            z-index: 1;
+        }
+
+        button i {
+            position: absolute;
+            inset: 0;
+            display: block;
+        }
+
+        button i::before {
+            content: "";
+            position: absolute;
+            width: 10px;
+            height: 2px;
+            left: 80%;
+            top: -2px;
+            border: 2px solid var(--clr);
+            background: #272822;
+            transition: 0.2s;
+        }
+
+        button:hover i::before {
+            width: 15px;
+            left: 20%;
+            animation: move 3s infinite;
+        }
+
+        button i::after {
+            content: "";
+            position: absolute;
+            width: 10px;
+            height: 2px;
+            left: 20%;
+            bottom: -2px;
+            border: 2px solid var(--clr);
+            background: #272822;
+            transition: 0.2s;
+        }
+
+        button:hover i::after {
+            width: 15px;
+            left: 80%;
+            animation: move 3s infinite;
+        }
+
+        @keyframes move {
+            0% {
+                transform: translateX(0);
+            }
+            50% {
+                transform: translateX(5px);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes box {
+            0% {
+                box-shadow: #27272c;
+            }
+            50% {
+                box-shadow: 0 0 25px var(--clr);
+            }
+            100% {
+                box-shadow: #27272c;
+            }
+        }
+
+    </style>
+</head>
+<body onLoad="noBack();" onpageshow="if (event.perisited) noBack();" onunload="">
+    <div class="main1">
+        <video class="video-background" src="https://videos.pexels.com/video-files/856528/856528-uhd_1440_1440_24fps.mp4" autoplay loop muted></video>
+        <div class="leftdiv">
+            <div class="image-container">
+                <img class="image" src="https://www.freeiconspng.com/uploads/crown-png-24.png" width="200px" height="200px">
+                <form id="adminForm">
+                    <div class="inputbox">
+                        <input type="email" placeholder="Enter your email" id="email" required>
+                    </div>
+                    <div class="inputbox">
+                        <input type="password" placeholder="Enter the Password" id="password" required>
+                    </div>
+                    <div class="button-container">
+                        <button style="--clr:#39FF14"><span>SUBMIT</span><i></i></button>
+                    </form>
+                </div>
+                <div class="button-container1">
+                <a href="http://localhost:9999/analytics/"><button style="--clr:#FF5E00" ><span>BACK</span><i></i></button></a>   
+                </div>
+            </div>
+        </div>
+        <div class="rightdiv">
+            <div class="form-container" id="form" >
+                <form id="organizerForm" >
+                    <div class="inputbox">
+                        <input type="email" placeholder="Enter email" id="organizerEmail" required>
+                    </div>
+                    <div class="button-container">
+                        <button style="--clr:#39FF14" id="add"><span>ADD</span><i></i></button>
+                        <button style="--clr:#FF5E00" id="remove"><span>REMOVE</span><i></i></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        window.onload = function(event){
+            document.getElementById('form').style.display = 'none';
+        }
+
+    </script>
+    <script>
+        document.getElementById('adminForm').addEventListener( "submit" ,function(event) {
+            /*
+            if(!validate()){
+              
+            }
+            else { */
+              event.preventDefault();
+              const email = document.getElementById('email').value;
+              const password = document.getElementById('password').value;
+              fetch('http://localhost:9999/admin-access/', {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ email, password})
+              })
+              .then(response => response.json())
+              .then(data => {
+                if(data.message === 'success'){
+                    document.getElementById('form').style.display='block';
+                    password.value = "";
+                    email.value="";
+                }
+                else{
+                    alert("Failed to Login");
+                    password = "";
+                    email="";
+                }
+              })
+              .catch(error => {
+                console.error('Error:', error);
+                alert('Failed to send email: ' + error);
+              });
+        });
+    </script>
+    <script>
+        document.getElementById('add').addEventListener( "click" ,function(event) {
+              event.preventDefault();
+              const organizerEmail = document.getElementById('organizerEmail').value;
+              //alert("Fetching");
+              fetch('http://localhost:9999/orgainzerAdd/', {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ organizerEmail})
+              })
+              .then(response => response.json())
+              .then(data => {
+                if(data.message === 'success'){
+                    alert("Email Successfully added");
+                    sendEmail(organizerEmail, "add");
+                    organizerEmail.value="";
+                }
+                else{
+                    alert("Warning : " + data.message);
+                    organizerEmail.value="";
+                }
+              })
+              .catch(error => {
+                console.error('Error:', error);
+                alert('Failed to Add email: ' + error);
+              });
+        });
+        document.getElementById('remove').addEventListener( "click" ,function(event) {
+              event.preventDefault();
+              const organizerEmail = document.getElementById('organizerEmail').value;
+              //alert("Fetching");
+              fetch('http://localhost:9999/orgainzerRemove/', {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ organizerEmail})
+              })
+              .then(response => response.json())
+              .then(data => {
+                if(data.message === 'success'){
+                    alert("Successfully Removed as Organizer");
+                    sendEmail(organizerEmail, "remove");
+                    organizerEmail.value="";
+                }
+                else{
+                    alert("Warning : "+ data.message);
+                    organizerEmail.value="";
+                }
+              })
+              .catch(error => {
+                console.error('Error:', error);
+                alert('Failed to Remove email: ' + error);
+              });
+        });
+        function sendEmail(emailid, text ) {
+            fetch('email-organizer', {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ emailid , text })
+              })
+        }
+    </script>
+    <script type="text/javascript">
+        window.history.forward();
+        function noBack(){
+            window.history.forward();
+        }
+    </script>
+</body>
+</html>

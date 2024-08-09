@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Registration</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    .registration-form {
+      width: 360px;
+      margin: 50px auto;
+      padding: 30px 20px;
+      background: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+    }
+    .registration-form h2 {
+      margin-bottom: 30px;
+    }
+    .form-control {
+      min-height: 40px;
+      box-shadow: none;
+      border-color: #ddd;
+    }
+    .form-control:focus {
+      border-color: #007bff;
+      box-shadow: 0 0 8px rgba(0,123,255,0.6);
+    }
+    .submit-btn {
+      font-size: 15px;
+      font-weight: bold;
+      background-color: #007bff;
+      border-color: #007bff;
+    }
+    .submit-btn:hover {
+      background-color: #0056b3;
+      border-color: #0056b3;
+    }
+    .error-message {
+      
+      color: #dc3545;
+    }
+    .image{
+        width:50px;
+        height:50px;
+
+
+    }
+    .heading{
+        color:white;
+        font-weight:bold;
+        font-size:30px;
+        text-align:center;
+
+    }
+    .bg-container{
+        background-image:url("https://img.freepik.com/free-vector/particles-gradient-background_23-2148357081.jpg");
+        background-size:cover;
+        
+    }
+  </style>
+</head>
+<body class="bg-container" onLoad="noBack();" onpageshow="if (event.perisited) noBack();" onunload="">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">
+        <img src="https://www.rgukt.in/images/Logonew.png" class="image"></a>
+        <span class="heading">STUDENT REGISTRATION SECTION</span
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ml-auto navbar-container">
+            <a class="nav-link active" href="http://localhost:9999/">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link active" href="http://localhost:9999/login1/">Login in</a>
+            <a class="nav-link active" href="#">Contact Us</a>
+            
+        </div>
+    </div>
+  </nav>
+  <div class="registration-form">
+    <h2 class="text-center">Student Registration</h2>
+    <form id="registrationForm" >
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" class="form-control" placeholder="Enter your username" required>
+        <p id="nameErr"></p>
+      </div>
+      <div class="form-group">
+        <label for="email">Email address</label>
+        <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email" required>
+        <p id="passErr"></p>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" class="form-control" placeholder="Enter your password" required>
+      </div>
+      <div class="form-group">
+        <label for="confirmPassword">Confirm Password</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" class="form-control" placeholder="Confirm your password" required>
+     </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary btn-block submit-btn" id="submitBtn">Register</button>
+      </div>
+    </form>
+  </div>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    	let userNameEl = document.getElementById("username");
+    	let emailEl = document.getElementById("email");
+    	let passwordEl = document.getElementById("password");
+    	let confirmPasswordEl = document.getElementById("confirmPassword");
+    	let submitBtnEl = document.getElementById("submitBtn");
+    	let nameErrEl = document.getElementById("nameErr");
+    	let passErrEl = document.getElementById("passErr");
+    	
+    	let emailErrEl = document.getElementById("emailErr");
+    	userNameEl.addEventListener("blur",function(event){
+    		if(userNameEl.value === ""){
+        	nameErrEl.textContent = "Required*";
+                    nameErrEl.style.color = "red";
+                }
+                else{
+                    nameErrEl.textContent = "";
+                }
+            })
+            emailEl.addEventListener("blur",function(event){
+                if(emailEl.value === ""){
+                    emailErrEl.textContent = "Required*";
+                    emailErrEl.style.color = "red";
+                }
+                else{
+                    emailErrEl.textContent = "";
+                }
+            })
+            passwordEl.addEventListener("blur",function(event){
+                if(event.target.value === ""){
+                    passErrEl.textContent = "Required*";
+                    passErrEl.style.color = "red";
+                }
+                else{
+                    passErrEl.textContent = "";
+                }
+            })
+            function validate(){
+                if(userNameEl.value === ""){
+                    if(passwordEl.value === ""){
+                        alert("please enter the username and password");
+                        return false;
+                    }
+
+                    else{
+                        alert("please enter the username");
+                        return false;
+                    }
+                }
+                else{
+                    if(passwordEl.value === ""){
+                        alert("please enter the password");
+                        return false;
+                    }
+                    
+                }
+                if(!emailEl.value.includes("@")){
+                
+                }
+                return true;
+            }
+            submitBtnEl.addEventListener("click",function(e) {
+                
+                if(!validate()){
+                    e.preventDefault();
+                    
+                }
+                else {
+
+                  const data = {
+                    username: userNameEl.value,
+                    email: emailEl.value,
+                    password: passwordEl.value
+                  };
+
+                  fetch('/registerStudentCheck/', {
+                    method: 'POST',
+                    headers: {
+                      'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                  })
+                  .then(response => response.json())
+                  .then(data => {
+                    if (data.message ==="success") {
+                      alert("Successfully registered \n Login again...");
+                      window.location.href = "http://localhost:9999/";
+                    }
+                    else if (data.message === 'failed') {
+                      alert("Failed...Try again...");
+                    }
+                    else {
+                      alert(`${data.message}`);
+                      //window.location.href = "http://localhost:9999/login1/";
+                    }
+                  })
+                  .catch(error => {
+                    console.error('Error:', error);
+                  });
+                    userNameEl.value = "";
+                    passwordEl.value = "";
+                    emailEl.value="";
+                    confirmPassword.value="";
+                    //alert("successfully logged");
+                }
+
+            })
+            
+  </script>
+
+  <script type="text/javascript">
+    window.history.forward();
+    function noBack(){
+        window.history.forward();
+    }
+</script>
+</body>
+</html>
+

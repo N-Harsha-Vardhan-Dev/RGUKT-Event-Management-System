@@ -1,0 +1,50 @@
+.event-img{
+    height:500px;
+    width:350px;
+    border-radius:5px;
+}
+.card-1{
+    height:500px;
+    margin:50px;
+    box-shadow:5px 5px 20px black;
+    overflow: hidden;
+}
+.intro{
+    height:70px;
+    width:350px;
+    padding:6px;
+    box-sizing: border-box;
+    position: absolute;
+    background: rgb(27,27,27,.5);
+    color:white;
+    bottom:-1180px;
+    transition:-5s;
+}
+.even-head{
+    margin:10px;
+    font-size:20px;
+    font-weight:bold
+}
+.even-para{
+    margin:20px;
+    font-size:20px;
+    visibility: hidden;
+    opacity:0;
+    font-weight:bold
+}
+.card-1:hover{
+   cursor:pointer;
+}
+.card-1:hover  .intro{
+    height:200px;
+   
+    background:transparent;
+}
+.card-1:hover .even-para{
+    opacity:1;
+    visibility:visible;
+}
+.card-1:hover .event-img{
+    transform:scale(1.1) rotate(-3deg);
+}
+
